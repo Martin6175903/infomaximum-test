@@ -1,0 +1,132 @@
+/* Fonts */
+/* Font-size */
+/* Colors */
+/* BreakPoints */
+.header {
+  padding: 17px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  line-height: 112%;
+  font-weight: 500;
+  position: relative;
+  border-bottom: 1px solid #d9d9d9;
+}
+@media (max-width: 576px) {
+  .header {
+    padding: 17px 15px;
+  }
+}
+.header__nav {
+  display: flex;
+  gap: 21px;
+  align-items: center;
+}
+.header__nav .link__img {
+  min-width: 134px;
+  min-height: 18.49px;
+}
+.header__info {
+  display: flex;
+  align-items: center;
+  gap: 136px;
+}
+
+.header__nav .nav__link {
+  transition: all 0.3s ease-in-out;
+}
+.header__nav .nav__link:hover {
+  transform: scale(1.05);
+}
+.header__nav .nav__button {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  padding: 9px 26px;
+  border-radius: 5px;
+  background: #4f2cd9;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+.header__nav .nav__button:hover {
+  transform: scale(1.05);
+}
+.header__nav .nav__button svg path {
+  fill: #fff;
+}
+.header__nav .nav__button.button .button__icon {
+  width: 12px;
+  height: 12px;
+}
+
+.header__info .info__contacts {
+  display: flex;
+  gap: 31px;
+  align-items: center;
+}
+.header__info .info__link {
+  transition: all 0.3s ease-in-out;
+}
+.header__info .info__link:hover {
+  transform: scale(1.05);
+  border-bottom: 1px solid #000;
+}
+.header__info .info__favorites {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+.header__info .info__favorites:hover {
+  transform: scale(1.05);
+  gap: 6px;
+  padding-left: 6px;
+}
+.header__info .info__favorites:hover .favorites__text {
+  font-weight: 600;
+}
+
+.favorites .favorites__icon {
+  width: 27px;
+  height: 24px;
+}
+
+@media (max-width: 1120px) {
+  .header {
+    padding-bottom: 30px;
+  }
+  .info__contacts {
+    position: absolute;
+    bottom: 5px;
+    right: 40px;
+  }
+}
+@media (max-width: 576px) {
+  .header {
+    flex-direction: column;
+    gap: 7px;
+    padding: 10px 15px;
+  }
+  .header__nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .header__info {
+    flex-direction: column;
+    gap: 7px;
+  }
+  .header__info .info__link {
+    text-align: center;
+  }
+  .header__info .info__link:hover {
+    border: none;
+  }
+  .header .info__contacts {
+    flex-direction: column;
+    position: static;
+    gap: 7px;
+  }
+}
+
+/*# sourceMappingURL=header.css.map */

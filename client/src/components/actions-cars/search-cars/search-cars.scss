@@ -1,0 +1,65 @@
+@use "../../../styles/vars" as *;
+
+.actions {
+  .search {
+    position: relative;
+    &__field {
+      min-width: 445px;
+      border: 1px solid $gray-2;
+      padding: 6px 32px 6px 10px;
+      border-radius: 5px;
+      transition: border 0.25s;
+      height: 36px;
+      &:focus {
+        border: 1px solid rgba($gray-4---black, 0.7);
+      }
+    }
+    &__button {
+      position: absolute;
+      right: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 3px;
+      background-color: $blue-2;
+      transition: width 0.25s, height 0.25s, right 0.25s;
+      & svg path {
+        fill: $gray-0---white;
+      }
+      & .button__icon {
+        width: 12px;
+        height: 12px;
+        transition: width 0.25s, height 0.25s;
+      }
+      &:hover {
+        width: 36px;
+        height: 36px;
+        right: 0;
+        .button__icon {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .main .search__field {
+    min-width: 200px;
+  }
+}
+
+@media (max-width: $breakpoint-xs) {
+  .actions__search {
+    width: 100%;
+    order: 1;
+    .search__field {
+      min-width: 100%;
+    }
+  }
+}

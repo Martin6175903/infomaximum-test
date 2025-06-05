@@ -1,0 +1,134 @@
+@use '../../styles/vars' as *;
+
+.header {
+  padding: 17px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: $h4-title-size;
+  line-height: 112%;
+  font-weight: 500;
+  position: relative;
+  border-bottom: 1px solid $gray-2;
+  @media (max-width: $breakpoint-xs) {
+    padding: 17px 15px;
+  }
+  &__nav {
+    display: flex;
+    gap: 21px;
+    align-items: center;
+    .link__img {
+      min-width: 134px;
+      min-height: 18.49px;
+    }
+  }
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 136px;
+  }
+}
+
+.header__nav .nav {
+  &__link {
+    transition: all .3s ease-in-out;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  &__button {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    padding: 9px 26px;
+    border-radius: 5px;
+    background: $blue-2;
+    color: $gray-0---white;
+    transition: all .2s ease-in-out;
+    &:hover {
+      transform: scale(1.05);
+    }
+    svg path {
+      fill: $gray-0---white;
+    }
+    &.button {
+      .button__icon {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+}
+
+.header__info .info {
+  &__contacts {
+    display: flex;
+    gap: 31px;
+    align-items: center;
+  }
+  &__link {
+    transition: all .3s ease-in-out;
+    &:hover {
+      transform: scale(1.05);
+      border-bottom: 1px solid $gray-4---black;
+    }
+  }
+  &__favorites {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    transition: all .3s ease-in-out;
+    &:hover {
+      transform: scale(1.05);
+      gap: 6px;
+      padding-left: 6px;
+    }
+    &:hover .favorites__text {
+      font-weight: 600;
+    }
+  }
+}
+
+.favorites .favorites__icon {
+  width: 27px;
+  height: 24px;
+}
+
+@media (max-width: $breakpoint-1120) {
+  .header {
+    padding-bottom: 30px;
+  }
+  .info__contacts {
+    position: absolute;
+    bottom: 5px;
+    right: 40px;
+  }
+}
+
+@media (max-width: $breakpoint-xs) {
+  .header {
+    flex-direction: column;
+    gap: 7px;
+    padding: 10px 15px;
+    &__nav {
+      width: 100%;
+      justify-content: space-between;
+    }
+    &__info {
+      flex-direction: column;
+      gap: 7px;
+      .info__link {
+        text-align: center;
+        &:hover {
+          border: none;
+        }
+      }
+    }
+  }
+  .header .info__contacts {
+    flex-direction: column;
+    position: static;
+    gap: 7px;
+  }
+}
+

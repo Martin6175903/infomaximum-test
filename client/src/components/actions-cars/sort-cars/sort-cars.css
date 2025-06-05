@@ -1,0 +1,68 @@
+/* Fonts */
+/* Font-size */
+/* Colors */
+/* BreakPoints */
+.actions .sort {
+  position: relative;
+}
+.actions .sort__button {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background-color: transparent;
+  padding: 5px;
+  border: 2px solid rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  transition: background-color 0.2s;
+  min-width: 200px;
+}
+.actions .sort__button:hover {
+  background-color: rgba(217, 217, 217, 0.7);
+}
+.actions .sort .button__icon {
+  width: 14.67px;
+  height: 16px;
+}
+.actions .sort .button__text {
+  color: #000;
+  font-size: 16px;
+}
+.actions .sort__list {
+  position: absolute;
+  top: 32px;
+  left: 26.67px;
+  border: 1px solid #000;
+  width: 206px;
+  font-family: "Arial", sans-serif;
+  margin-top: 2px;
+  cursor: pointer;
+}
+.actions .sort .list {
+  display: none;
+}
+.actions .sort .list.select-open {
+  display: block;
+}
+.actions .sort .list__item {
+  padding: 3px 4px;
+  transition: background-color 0.25s, color 0.25s;
+}
+.actions .sort .list__item:hover {
+  background-color: #1e8fff;
+  color: #fff;
+}
+
+@media (max-width: 576px) {
+  .sort {
+    width: 100%;
+    order: 2;
+  }
+  .sort__button {
+    width: 100%;
+  }
+  .sort__list {
+    left: 0;
+  }
+}
+
+/*# sourceMappingURL=sort-cars.css.map */

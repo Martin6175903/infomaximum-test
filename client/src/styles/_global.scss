@@ -1,0 +1,14 @@
+@use "vars" as *;
+
+html, body, #root {
+  height: 100%;
+  font-family: $font-main;
+  font-size: $p-text-size;
+  color: $gray-4---black;
+  line-height: 114%;
+}
+
+.wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+}

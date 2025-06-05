@@ -1,0 +1,20 @@
+@use '../../styles/vars' as *;
+
+.main {
+  padding: 46px 40px;
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (max-width: $breakpoint-xs) {
+  .main {
+    padding: 20px 15px;
+    .actions {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+}

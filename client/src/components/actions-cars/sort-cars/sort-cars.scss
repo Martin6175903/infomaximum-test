@@ -1,0 +1,66 @@
+@use "../../../styles/vars" as *;
+
+.actions {
+  .sort {
+    position: relative;
+    &__button {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      background-color: transparent;
+      padding: 5px;
+      border: 2px solid rgba($gray-4---black, 0.7);
+      border-radius: 8px;
+      transition: background-color 0.2s;
+      min-width: 200px;
+      &:hover {
+        background-color: rgba($gray-2, 0.7);
+      }
+    }
+    & .button__icon {
+      width: 14.67px;
+      height: 16px;
+    }
+    & .button__text {
+      color: $gray-4---black;
+      font-size: $h4-title-size;
+    }
+    &__list {
+      position: absolute;
+      top: 32px;
+      left: 26.67px;
+      border: 1px solid $gray-4---black;
+      width: 206px;
+      font-family: $font-secondary;
+      margin-top: 2px;
+      cursor: pointer;
+    }
+    & .list {
+      display: none;
+      &.select-open {
+        display: block;
+      }
+      &__item {
+        padding: 3px 4px;
+        transition: background-color 0.25s, color 0.25s;
+        &:hover {
+          background-color: $blue-0;
+          color: $gray-0---white;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-xs) {
+  .sort {
+    width: 100%;
+    order: 2;
+    &__button {
+      width: 100%;
+    }
+    &__list {
+      left: 0;
+    }
+  }
+}
