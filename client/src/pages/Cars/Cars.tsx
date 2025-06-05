@@ -6,7 +6,7 @@ import './cars.scss';
 import SearchCars from '../../components/actions-cars/search-cars/SearchCars';
 
 const Cars: FC = () => {
-  const cars: Query['cars'] = carsJSON;
+  // const cars: Query['cars'] = carsJSON;
 
   return (
     <main className={'main'}>
