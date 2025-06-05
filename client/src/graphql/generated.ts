@@ -19,29 +19,29 @@ export type Scalars = {
 };
 
 export type Car = {
-  __typename?: "Car";
+  __typename?: 'Car';
   /** Наличие автомобиля */
-  availability: Scalars["Boolean"];
+  availability: Scalars['Boolean'];
   /** Марка автомобиля */
-  brand: Scalars["String"];
+  brand: Scalars['String'];
   /** Цвет автомобиля */
-  color: Scalars["String"];
+  color: Scalars['String'];
   /** Краткое описание автомобиля */
-  description: Scalars["String"];
+  description: Scalars['String'];
   /** Уникальный id автомобиля */
-  id: Scalars["Int"];
+  id: Scalars['Int'];
   /** Фото автомобиля */
-  img_src: Scalars["String"];
+  img_src: Scalars['String'];
   /** Модель автомобиля */
-  model: Scalars["String"];
+  model: Scalars['String'];
   /** Год выпуска модели автомобиля */
-  model_year: Scalars["Int"];
+  model_year: Scalars['Int'];
   /** Цена автомобиля */
-  price: Scalars["String"];
+  price: Scalars['String'];
 };
 
 export type Query = {
-  __typename?: "Query";
+  __typename?: 'Query';
   /** Получить автомобиль по id */
   car?: Maybe<Car>;
   /** Получить все автомобили */
@@ -49,9 +49,9 @@ export type Query = {
 };
 
 export type QueryCarArgs = {
-  id: Scalars["Int"];
+  id: Scalars['Int'];
 };
 
 export type QueryCarsArgs = {
-  search?: InputMaybe<Scalars["String"]>;
+  search?: InputMaybe<Scalars['String']>;
 };

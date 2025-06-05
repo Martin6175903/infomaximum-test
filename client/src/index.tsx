@@ -1,9 +1,9 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
-import App from "./App";
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './App';
 import './styles/main.scss';
 
-const rootNodeId = "root";
+const rootNodeId = 'root';
 
 const container = document.getElementById(rootNodeId);
 

@@ -1,17 +1,17 @@
-import "./header.scss";
-import Logo from "@assets/logo.svg?react";
-import BurgerIcon from "@assets/icons/burger-icon.svg?react";
-import FilledHeartIcon from "@assets/icons/filled-heart-icon.svg?react";
+import './header.scss';
+import Logo from '@assets/logo.svg?react';
+import BurgerIcon from '@assets/icons/burger-icon.svg?react';
+import FilledHeartIcon from '@assets/icons/filled-heart-icon.svg?react';
 
 const Header = () => {
   return (
-    <header className='header'>
+    <header className="header">
       <nav className={`header__nav nav`}>
         <a href="/" className={`nav__link link`}>
-          <Logo className={'link__img'}/>
+          <Logo className={'link__img'} />
         </a>
         <button className={`nav__button button`}>
-          <BurgerIcon className={`button__icon`}/>
+          <BurgerIcon className={`button__icon`} />
           <span className={`button__text`}>Каталог</span>
         </button>
       </nav>
@@ -33,7 +33,7 @@ const Header = () => {
           </a>
         </div>
         <a href="/favorites" className={`info__favorites favorites`}>
-          <FilledHeartIcon className={`favorites__icon`}/>
+          <FilledHeartIcon className={`favorites__icon`} />
           <span className={`favorites__text`}>Избранное</span>
         </a>
       </div>

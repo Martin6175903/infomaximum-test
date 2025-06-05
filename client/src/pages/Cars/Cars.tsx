@@ -1,18 +1,18 @@
-import { FC } from "react";
-import carsJSON from "../../fake_cars.json";
-import { Query } from "../../graphql/generated";
+import { FC } from 'react';
+import carsJSON from '../../fake_cars.json';
+import { Query } from '../../graphql/generated';
 import SortCars from '../../components/actions-cars/sort-cars/SortCars';
 import './cars.scss';
 import SearchCars from '../../components/actions-cars/search-cars/SearchCars';
 
 const Cars: FC = () => {
-  const cars: Query["cars"] = carsJSON;
+  const cars: Query['cars'] = carsJSON;
 
   return (
     <main className={'main'}>
       <div className={'main__actions actions'}>
-        <SortCars/>
-        <SearchCars/>
+        <SortCars />
+        <SearchCars />
       </div>
       {/*<div>*/}
       {/*  {cars.map((car) => (*/}

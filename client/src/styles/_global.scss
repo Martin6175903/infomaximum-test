@@ -1,6 +1,8 @@
-@use "vars" as *;
+@use 'vars' as *;
 
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
   font-family: $font-main;
   font-size: $p-text-size;
