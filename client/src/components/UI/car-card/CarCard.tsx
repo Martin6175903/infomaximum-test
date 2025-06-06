@@ -11,7 +11,7 @@ interface CarCardProps {
 const CarCard = ({ car }: CarCardProps) => {
 
   return (
-    <div className={'car-card'}>
+    <a href={`/${car.id}`} className={`car-card ${car.availability ? "" : "car-card--outstock"}`}>
       <div className="car-card__photo photo">
         {!car.availability && (
           <p className="photo__stock">Нет в наличии</p>
@@ -32,7 +32,7 @@ const CarCard = ({ car }: CarCardProps) => {
           </button>
         </div>
       </div>
-    </div>
+    </a>
   );
 };
 

@@ -29,6 +29,7 @@
 }
 .actions .sort__list {
   position: absolute;
+  z-index: 30;
   top: 32px;
   left: 26.67px;
   border: 1px solid #000;
@@ -36,6 +37,7 @@
   font-family: "Arial", sans-serif;
   margin-top: 2px;
   cursor: pointer;
+  background-color: #fff;
 }
 .actions .sort .list {
   display: none;

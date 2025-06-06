@@ -27,6 +27,7 @@
     }
     &__list {
       position: absolute;
+      z-index: 30;
       top: 32px;
       left: 26.67px;
       border: 1px solid $gray-4---black;
@@ -34,6 +35,7 @@
       font-family: $font-secondary;
       margin-top: 2px;
       cursor: pointer;
+      background-color: $gray-0---white;
     }
     & .list {
       display: none;

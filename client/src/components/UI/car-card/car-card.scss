@@ -4,9 +4,15 @@
   display: flex;
   flex-direction: column;
   gap: 26px;
+  position: relative;
+  transition: all .2s ease-in-out;
+  &:hover {
+    transform: scale(1.01);
+  }
   &__photo {
     border-radius: 15px 15px 0 0;
     border: 1px solid $gray-2;
+    overflow: hidden;
     &.photo {
       position: relative;
       .photo__stock {
@@ -67,6 +73,49 @@
         svg {
           width: 27px;
           height: 24px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-xl) {
+  .car-card {
+    &__info {
+      .info {
+        &__box {
+          flex-direction: column;
+          align-items: start;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .car-card {
+    &__info {
+      .actions {
+        gap: 0;
+        justify-content: space-between;
+        &__button {
+          position: absolute;
+          right: -10px;
+          top: -5px;
+          background-color: $gray-0---white;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .car-card {
+    &__info {
+      .info {
+        &__box {
+          margin: 6px 0;
+          gap: 6px;
         }
       }
     }

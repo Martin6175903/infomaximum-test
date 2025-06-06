@@ -6,10 +6,16 @@
   display: flex;
   flex-direction: column;
   gap: 26px;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+.car-card:hover {
+  transform: scale(1.01);
 }
 .car-card__photo {
   border-radius: 15px 15px 0 0;
   border: 1px solid #d9d9d9;
+  overflow: hidden;
 }
 .car-card__photo.photo {
   position: relative;
@@ -69,6 +75,31 @@
 .car-card__info .actions__button svg {
   width: 27px;
   height: 24px;
+}
+
+@media (max-width: 1440px) {
+  .car-card__info .info__box {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+@media (max-width: 768px) {
+  .car-card__info .actions {
+    gap: 0;
+    justify-content: space-between;
+  }
+  .car-card__info .actions__button {
+    position: absolute;
+    right: -10px;
+    top: -5px;
+    background-color: #fff;
+  }
+}
+@media (max-width: 640px) {
+  .car-card__info .info__box {
+    margin: 6px 0;
+    gap: 6px;
+  }
 }
 
 /*# sourceMappingURL=car-card.css.map */

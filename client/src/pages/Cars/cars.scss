@@ -15,6 +15,31 @@
   }
 }
 
+@media (max-width: $breakpoint-1240) {
+  .main {
+    &__cars {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@media (max-width: $breakpoint-lg) {
+  .main {
+    &__cars {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .main {
+    &__cars {
+      grid-template-columns: 1fr;
+      row-gap: 35px;
+    }
+  }
+}
+
 @media (max-width: $breakpoint-xs) {
   .main {
     padding: 20px 15px;

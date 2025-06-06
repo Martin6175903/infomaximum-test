@@ -11,7 +11,7 @@
   display: inline-block;
   background-color: #4f2cd9;
   color: #fff;
-  transition: background-color 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .button-primary:hover {
   background-color: #3213ac;
@@ -19,6 +19,17 @@
 .button-primary.button--active {
   background-color: #d9d9d9;
   color: #000;
+}
+.button-primary.button--active:hover {
+  cursor: not-allowed;
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .button-primary {
+    width: 100% !important;
+    padding: 13px 0;
+  }
 }
 
 /*# sourceMappingURL=button.css.map */

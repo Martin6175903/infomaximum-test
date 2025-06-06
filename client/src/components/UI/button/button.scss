@@ -9,12 +9,23 @@
   display: inline-block;
   background-color: $blue-2;
   color: $gray-0---white;
-  transition: background-color 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   &:hover {
     background-color: $blue-3;
   }
   &.button--active {
     background-color: $gray-2;
     color: $gray-4---black;
+    &:hover {
+      cursor: not-allowed;
+      transform: scale(0.95);
+    }
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .button-primary {
+    width: 100% !important;
+    padding: 13px 0;
   }
 }
