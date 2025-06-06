@@ -1,0 +1,44 @@
+@use "../../styles/vars" as *;
+
+.main {
+  .car {
+    margin: 0 40px;
+  }
+  &__header-info {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: center;
+    & .header-info {
+      &__box:first-child {
+        img {
+          min-width: 320px;
+        }
+      }
+      &__box:last-child {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+    }
+    .box {
+      &__title {
+        font-weight: 700;
+        font-size: $h2-title-size;
+      }
+      &__description {
+        font-weight: 500;
+        font-size: $h4-title-size;
+        max-width: 600px;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-lg) {
+  .main {
+    &__header-info {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

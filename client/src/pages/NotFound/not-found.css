@@ -1,0 +1,49 @@
+/* Fonts */
+/* Font-size */
+/* Colors */
+/* BreakPoints */
+.not-found {
+  height: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 48px;
+  line-height: 120%;
+  margin: 0 40px;
+}
+.not-found__title {
+  font-size: inherit;
+  font-weight: 700;
+}
+.not-found__text {
+  font-weight: 500;
+}
+.not-found__link {
+  color: #3213ac;
+  font-weight: 600;
+  border-bottom: 2px solid #3213ac;
+  transition: all 0.3s ease-in-out;
+}
+.not-found__link:hover {
+  transform: scale(1.03);
+}
+
+@media (max-width: 1024px) {
+  .not-found {
+    font-size: 36px;
+  }
+}
+@media (max-width: 640px) {
+  .not-found {
+    font-size: 24px;
+    text-align: center;
+    margin: 0 15px;
+  }
+  .not-found__link {
+    border: none;
+    text-decoration: underline;
+  }
+}
+
+/*# sourceMappingURL=not-found.css.map */

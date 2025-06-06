@@ -6,6 +6,7 @@ import { Toaster } from 'react-hot-toast';
 import { Route, Routes } from 'react-router';
 import Favorites from './pages/Favorites/Favorites';
 import Car from './pages/Car/Car';
+import NotFound from './pages/NotFound/NotFound';
 
 const App: FC = () => {
   const apolloClient = new ApolloClient({
@@ -21,6 +22,7 @@ const App: FC = () => {
           <Route path={'/'} element={<Cars/>}></Route>
           <Route path={'/favorites'} element={<Favorites/>}></Route>
           <Route path={'/cars/:id'} element={<Car/>}></Route>
+          <Route path={'*'} element={<NotFound/>}></Route>
         </Routes>
       </div>
     </ApolloProvider>

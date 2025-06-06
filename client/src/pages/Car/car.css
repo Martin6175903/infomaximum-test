@@ -1,3 +1,38 @@
+/* Fonts */
+/* Font-size */
+/* Colors */
+/* BreakPoints */
+.main .car {
+  margin: 0 40px;
+}
+.main__header-info {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: center;
+}
+.main__header-info .header-info__box:first-child img {
+  min-width: 320px;
+}
+.main__header-info .header-info__box:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.main__header-info .box__title {
+  font-weight: 700;
+  font-size: 36px;
+}
+.main__header-info .box__description {
+  font-weight: 500;
+  font-size: 16px;
+  max-width: 600px;
+}
 
+@media (max-width: 1024px) {
+  .main__header-info {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 /*# sourceMappingURL=car.css.map */

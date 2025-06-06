@@ -1,0 +1,47 @@
+@use "../../styles/vars" as *;
+
+.not-found {
+  height: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: $h1-title-size;
+  line-height: 120%;
+  margin: 0 40px;
+  &__title {
+    font-size: inherit;
+    font-weight: 700;
+  }
+  &__text {
+    font-weight: 500;
+  }
+  &__link {
+    color: $blue-3;
+    font-weight: 600;
+    border-bottom: 2px solid $blue-3;
+    transition: all .3s ease-in-out;
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+}
+
+@media (max-width: $breakpoint-lg) {
+  .not-found {
+    font-size: $h2-title-size;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .not-found {
+    font-size: $h3-title-size;
+    text-align: center;
+    margin: 0 15px;
+    &__link {
+      border:none;
+      text-decoration: underline;
+    }
+  }
+}
+
