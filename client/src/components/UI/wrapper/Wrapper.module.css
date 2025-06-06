@@ -1,0 +1,15 @@
+/* Fonts */
+/* Font-size */
+/* Colors */
+/* BreakPoints */
+.wrapper {
+  padding: 0 40px;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 0 15px;
+  }
+}
+
+/*# sourceMappingURL=Wrapper.module.css.map */

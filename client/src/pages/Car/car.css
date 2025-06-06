@@ -2,9 +2,6 @@
 /* Font-size */
 /* Colors */
 /* BreakPoints */
-.main .car {
-  margin: 0 40px;
-}
 .main__header-info {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;

@@ -12,6 +12,12 @@
 .car-card:hover {
   transform: scale(1.01);
 }
+.car-card:is(.car-card--outstock) .actions__button svg path {
+  fill: #d9d9d9;
+}
+.car-card:not(:is(.car-card--outstock)) .actions__button:hover svg path {
+  fill: rgba(50, 19, 172, 0.85);
+}
 .car-card__photo {
   border-radius: 15px 15px 0 0;
   border: 1px solid #d9d9d9;
@@ -69,10 +75,8 @@
 .car-card__info .actions__button svg path {
   transition: all 0.2s ease-in-out;
 }
-.car-card__info .actions__button:hover svg path {
-  fill: rgba(50, 19, 172, 0.85);
-}
 .car-card__info .actions__button svg {
+  pointer-events: none;
   width: 27px;
   height: 24px;
 }

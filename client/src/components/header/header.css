@@ -108,6 +108,10 @@
     gap: 7px;
     padding: 10px 15px;
   }
+  .header__nav .link__img {
+    min-width: 110px;
+    min-height: 16.49px;
+  }
   .header__nav {
     width: 100%;
     justify-content: space-between;

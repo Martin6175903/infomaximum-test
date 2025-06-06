@@ -9,6 +9,16 @@
   &:hover {
     transform: scale(1.01);
   }
+  &:is(.car-card--outstock) .actions__button {
+    svg path {
+      fill: $gray-2;
+    }
+  }
+  &:not(:is(.car-card--outstock)) .actions__button {
+    &:hover svg path {
+      fill: rgba($blue-3, .85);
+    }
+  }
   &__photo {
     border-radius: 15px 15px 0 0;
     border: 1px solid $gray-2;
@@ -67,10 +77,8 @@
         & svg path {
           transition: all .2s ease-in-out;
         }
-        &:hover svg path {
-          fill: rgba($blue-3, .85);
-        }
         svg {
+          pointer-events: none;
           width: 27px;
           height: 24px;
         }

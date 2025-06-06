@@ -1,5 +1,11 @@
+import Wrapper from '../../components/UI/wrapper/Wrapper';
+
 const Favorites = () => {
-  return <div></div>;
+  return (
+    <Wrapper>
+
+    </Wrapper>
+  )
 };
 
 export default Favorites;

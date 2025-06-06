@@ -3,7 +3,7 @@
 /* Colors */
 /* BreakPoints */
 .main {
-  padding: 46px 40px;
+  padding: 46px 0;
 }
 .main__actions {
   display: flex;

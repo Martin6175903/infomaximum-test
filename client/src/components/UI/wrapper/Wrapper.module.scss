@@ -1,0 +1,11 @@
+@use '../../../styles/vars' as *;
+
+.wrapper {
+  padding: 0 40px;
+}
+
+@media (max-width: $breakpoint-md) {
+  .wrapper {
+    padding: 0 15px;
+  }
+}

@@ -1,9 +1,6 @@
 @use "../../styles/vars" as *;
 
 .main {
-  .car {
-    margin: 0 40px;
-  }
   &__header-info {
     display: grid;
     grid-template-columns: 0.8fr 1.2fr;

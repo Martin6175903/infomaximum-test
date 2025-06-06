@@ -111,6 +111,12 @@
     gap: 7px;
     padding: 10px 15px;
     &__nav {
+      .link__img {
+        min-width: 110px;
+        min-height: 16.49px;
+      }
+    }
+    &__nav {
       width: 100%;
       justify-content: space-between;
     }
