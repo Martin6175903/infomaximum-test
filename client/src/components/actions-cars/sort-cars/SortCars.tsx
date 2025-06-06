@@ -1,5 +1,5 @@
 import SortIcon from "@assets/icons/sort-icon.svg?react";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
 import "./sort-cars.scss";
 import { Car } from "../../../graphql/generated";
 import { sortCars } from "../../../utils/sortCars";
@@ -22,13 +22,26 @@ const sortItems = [
 const SortCars = ({ cars, setCars }: SortCarsProps) => {
   const [isOpenSelect, setIsOpenSelect] = useState(false);
   const [currentItemSelect, setCurrentItemSelect] = useState(sortItems[0]);
+  const sortRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setCars(sortCars(cars, currentItemSelect.value));
   }, [currentItemSelect]);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (sortRef.current && !sortRef.current.contains(event.target as Node)) {
+        setIsOpenSelect(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className={"actions__sort sort"}>
+    <div className={"actions__sort sort"} ref={sortRef}>
       <button
         onClick={() => setIsOpenSelect(!isOpenSelect)}
         className={"sort__button button"}
