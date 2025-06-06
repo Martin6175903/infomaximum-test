@@ -7,7 +7,5 @@ interface Cars {
 }
 
 export const useGetAllCars = () => {
-  return useQuery<Cars>(GET_ALL_CARS, {
-    pollInterval: 1000
-  })
+  return useQuery<Cars>(GET_ALL_CARS)
 }

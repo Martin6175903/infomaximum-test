@@ -15,3 +15,19 @@ export const GET_ALL_CARS = gql`
         }
     }
 `
+
+export const GET_CAR_BY_ID = gql`
+    query GetCarByID($id: Int!) {
+        car(id: $id) {
+            id
+            brand
+            model
+            availability
+            color
+            description
+            img_src
+            model_year
+            price
+        }
+    }
+`

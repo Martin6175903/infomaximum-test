@@ -3,6 +3,8 @@ import './car-card.scss';
 import Button from '../button/Button';
 import EmptyHeartIcon from '@assets/icons/empty-heart-icon.svg?react';
 import { checkingOnStrLen } from '../../../utils/checkingOnStrLen';
+import { Link } from 'react-router';
+import toast from 'react-hot-toast';
 
 interface CarCardProps {
   car: Car
@@ -10,8 +12,14 @@ interface CarCardProps {
 
 const CarCard = ({ car }: CarCardProps) => {
 
+  function isStockCar(isStock: boolean) {
+    if (!isStock) {
+      toast.error('Данного транспорта сейчас нет в коллекции.')
+    }
+  }
+
   return (
-    <a href={`/${car.id}`} className={`car-card ${car.availability ? "" : "car-card--outstock"}`}>
+    <Link onClick={() => isStockCar(car.availability)} to={`/${car.availability ? `cars/${car.id}` : ''}`} className={`car-card ${car.availability ? "" : "car-card--outstock"}`}>
       <div className="car-card__photo photo">
         {!car.availability && (
           <p className="photo__stock">Нет в наличии</p>
@@ -32,7 +40,7 @@ const CarCard = ({ car }: CarCardProps) => {
           </button>
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
 
