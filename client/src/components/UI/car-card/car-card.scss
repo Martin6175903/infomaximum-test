@@ -1,0 +1,74 @@
+@use "../../../styles/vars" as *;
+
+.car-card {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  &__photo {
+    border-radius: 15px 15px 0 0;
+    border: 1px solid $gray-2;
+    &.photo {
+      position: relative;
+      .photo__stock {
+        z-index: 10;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        white-space: nowrap;
+        transform: translate(-50%, -50%);
+        border-radius: 15px;
+        background: $gray-4---black;
+        padding: 16px 34px;
+        color: $gray-0---white;
+        font-weight: 500;
+        font-size: $h3-title-size;
+        text-align: center;
+      }
+      .photo__img--outstock {
+        opacity: 0.3;
+      }
+    }
+  }
+  &__info {
+    .info {
+      &__mark {
+        font-weight: 500;
+        font-size: $h3-title-size;
+        line-height: 117%;
+      }
+      &__box {
+        margin: 12px 0;
+        color: $gray-3;
+        display: flex;
+        gap: 14px;
+        align-items: center;
+      }
+      &__price {
+        font-weight: 500;
+        font-size: $h4-title-size;
+        line-height: 112%;
+      }
+    }
+    & .actions {
+      margin-top: 20px;
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      &__button {
+        display: inline-block;
+        padding: 0;
+        transform: scale(1.05);
+        & svg path {
+          transition: all .2s ease-in-out;
+        }
+        &:hover svg path {
+          fill: rgba($blue-3, .85);
+        }
+        svg {
+          width: 27px;
+          height: 24px;
+        }
+      }
+    }
+  }
+}

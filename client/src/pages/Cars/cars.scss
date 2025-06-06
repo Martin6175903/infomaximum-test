@@ -7,6 +7,12 @@
     justify-content: space-between;
     align-items: center;
   }
+  &__cars {
+    margin-top: 42px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 73px 20px;
+  }
 }
 
 @media (max-width: $breakpoint-xs) {

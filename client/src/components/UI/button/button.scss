@@ -1,0 +1,20 @@
+@use "../../../styles/vars" as *;
+
+.button-primary {
+  border-radius: 5px;
+  padding: 19px 0;
+  font-weight: 500;
+  font-size: $h4-title-size;
+  line-height: 112%;
+  display: inline-block;
+  background-color: $blue-2;
+  color: $gray-0---white;
+  transition: background-color 0.2s ease-in-out;
+  &:hover {
+    background-color: $blue-3;
+  }
+  &.button--active {
+    background-color: $gray-2;
+    color: $gray-4---black;
+  }
+}

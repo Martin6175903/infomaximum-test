@@ -6,13 +6,15 @@ import './cars.scss';
 import SearchCars from '../../components/actions-cars/search-cars/SearchCars';
 import { useQuery } from '@apollo/client';
 import { GET_ALL_CARS } from '../../graphql/query/car.graphql';
+import CarCard from '../../components/UI/car-card/CarCard';
 
 const Cars: FC = () => {
   const {data, loading, error} = useQuery<{cars: Query["cars"]}>(GET_ALL_CARS, {
     variables: {
       offset: 0,
       limit: 10,
-    }
+    },
+    pollInterval: 1000
   });
 
   return (
@@ -21,12 +23,10 @@ const Cars: FC = () => {
         <SortCars />
         <SearchCars />
       </div>
-      <div>
+      <div className={'main__cars'}>
         {loading ? "Loading..." : (
           data?.cars.map((car) => (
-            <div key={car.id}>
-              <img src={`${VITE_SERVER_URL}${car.img_src}`} alt="" />
-            </div>
+            <CarCard key={car.id} car={car} />
           ))
         )}
       </div>
