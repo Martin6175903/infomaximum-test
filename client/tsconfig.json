@@ -23,12 +23,14 @@
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"]
     },
-    "types": ["vite-plugin-svgr/client", "@graphql-codegen/typescript/types/globals"]
+    "types": [
+      "vite-plugin-svgr/client"
+    ]
   },
   "include": [
     "src",
     "vite-env.d.ts",
-    "src/**/*.graphql",  // Включаем GraphQL файлы
-    "src/**/*.graphql.ts"  // Включаем файлы с GraphQL запросами
+    "src/**/*.graphql", // Включаем GraphQL файлы
+    "src/**/*.graphql.ts" // Включаем файлы с GraphQL запросами
   ]
 }

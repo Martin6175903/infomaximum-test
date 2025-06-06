@@ -54,7 +54,7 @@
     border: 2px solid $red---1;
     border-radius: 5px;
     padding: 17px;
-    transition: background-color .15s ease-in-out, border .15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border 0.15s ease-in-out;
     &:hover {
       background-color: $red---1;
       & .favorites__delete-icon path {
@@ -73,11 +73,10 @@
     width: 18px;
     height: 19px;
     & path {
-      transition: all .15s ease-in-out;
+      transition: all 0.15s ease-in-out;
     }
   }
 }
-
 
 @media (max-width: $breakpoint-lg) {
   .favorites {

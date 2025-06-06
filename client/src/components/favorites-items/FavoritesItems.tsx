@@ -1,7 +1,7 @@
-import { favoritesStore } from '../../store/store';
-import Button from '../../components/UI/button/Button';
-import DeleteIcon from '@assets/icons/delete-icon.svg?react';
-import { observer } from 'mobx-react-lite';
+import { favoritesStore } from "../../store/store";
+import Button from "../../components/UI/button/Button";
+import DeleteIcon from "@assets/icons/delete-icon.svg?react";
+import { observer } from "mobx-react-lite";
 import "./favorites-items.scss";
 
 const FavoritesItems = observer(() => {
@@ -17,7 +17,9 @@ const FavoritesItems = observer(() => {
             />
           </div>
           <div className="favorites__info">
-            <h3 className="favorites__car-title">{favorite.brand} {favorite.model}</h3>
+            <h3 className="favorites__car-title">
+              {favorite.brand} {favorite.model}
+            </h3>
             <p className="favorites__description">{favorite.description}</p>
             <div className="favorites__specs">
               <p className="favorites__spec">Год: {favorite.model_year}</p>
@@ -28,9 +30,11 @@ const FavoritesItems = observer(() => {
               <Button width={259}>Выбрать комплектацию</Button>
               <button
                 className="favorites__delete-button"
-                onClick={() => favoritesStore.removeCarFromFavorites(favorite.id)}
+                onClick={() =>
+                  favoritesStore.removeCarFromFavorites(favorite.id)
+                }
               >
-                <DeleteIcon className="favorites__delete-icon"/>
+                <DeleteIcon className="favorites__delete-icon" />
               </button>
             </div>
           </div>

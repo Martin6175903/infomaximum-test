@@ -1,15 +1,15 @@
-import './header.scss';
-import Logo from '@assets/logo.svg?react';
-import BurgerIcon from '@assets/icons/burger-icon.svg?react';
-import FilledHeartIcon from '@assets/icons/filled-heart-icon.svg?react';
-import { Link } from 'react-router';
+import "./header.scss";
+import Logo from "@assets/logo.svg?react";
+import BurgerIcon from "@assets/icons/burger-icon.svg?react";
+import FilledHeartIcon from "@assets/icons/filled-heart-icon.svg?react";
+import { Link } from "react-router";
 
 const Header = () => {
   return (
     <header className="header">
       <nav className={`header__nav nav`}>
         <Link to="/" className={`nav__link link`}>
-          <Logo className={'link__img'} />
+          <Logo className={"link__img"} />
         </Link>
         <button className={`nav__button button`}>
           <BurgerIcon className={`button__icon`} />
