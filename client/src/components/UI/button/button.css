@@ -6,6 +6,7 @@
   border-radius: 5px;
   padding: 19px 0;
   font-weight: 500;
+  min-height: 56px;
   font-size: 16px;
   line-height: 112%;
   display: inline-block;

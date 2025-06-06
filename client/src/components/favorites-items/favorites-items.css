@@ -1,0 +1,96 @@
+/* Fonts */
+/* Font-size */
+/* Colors */
+/* BreakPoints */
+.favorites__items {
+  display: flex;
+  flex-direction: column;
+  gap: 36.39px;
+  padding: 64px 0;
+}
+.favorites__item {
+  display: grid;
+  grid-template-columns: 443px auto;
+  gap: 20px;
+}
+.favorites__item:not(:last-child) {
+  padding-bottom: 24px;
+  border-bottom: 2px solid #d9d9d9;
+}
+.favorites__img-container {
+  border-radius: 12px;
+  border: 0.77px solid #d9d9d9;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.favorites__car-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 117%;
+}
+.favorites__description {
+  color: #595959;
+  margin: 16px 0;
+  max-width: 834px;
+}
+.favorites__spec:not(:last-child) {
+  color: #595959;
+}
+.favorites__spec:nth-child(2) {
+  margin: 16px 0 33.61px;
+}
+.favorites__spec:last-child {
+  font-size: 24px;
+  line-height: 117%;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.favorites__actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.favorites__delete-button {
+  border: 2px solid #d73737;
+  border-radius: 5px;
+  padding: 17px;
+  transition: background-color 0.15s ease-in-out, border 0.15s ease-in-out;
+}
+.favorites__delete-button:hover {
+  background-color: #d73737;
+}
+.favorites__delete-button:hover .favorites__delete-icon path {
+  fill: #fff;
+}
+.favorites__delete-button:active {
+  background-color: #b72121;
+  border-color: #b72121;
+}
+.favorites__delete-button:active .favorites__delete-icon path {
+  fill: #fff;
+}
+.favorites__delete-icon {
+  width: 18px;
+  height: 19px;
+}
+.favorites__delete-icon path {
+  transition: all 0.15s ease-in-out;
+}
+
+@media (max-width: 1024px) {
+  .favorites__items {
+    padding: 35px 0;
+  }
+  .favorites__item {
+    grid-template-columns: 1fr;
+  }
+  .favorites__img-container {
+    justify-content: center;
+  }
+  .favorites__description {
+    font-size: 12px;
+  }
+}
+
+/*# sourceMappingURL=favorites-items.css.map */

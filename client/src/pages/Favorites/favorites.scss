@@ -1,0 +1,29 @@
+@use "../../styles/vars" as *;
+
+.favorites {
+  margin: 46px 0;
+  &__title {
+    font-size: $h1-title-size;
+    font-weight: 700;
+    line-height: 121%;
+    padding-bottom: 26px;
+    border-bottom: 2px solid $gray-2;
+  }
+}
+
+@media (max-width: $breakpoint-lg) {
+  .favorites {
+    &__title {
+      font-size: $h2-title-size;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .favorites {
+    &__title {
+      font-size: $h3-title-size;
+      text-align: center;
+    }
+  }
+}

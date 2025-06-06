@@ -3,7 +3,7 @@ import './button.scss';
 
 interface ButtonProps extends ComponentProps<'button'>{
   width?: number;
-  availability: boolean;
+  availability?: boolean;
 }
 
 const Button = ({ children, width, availability = true }: PropsWithChildren<ButtonProps>) => {

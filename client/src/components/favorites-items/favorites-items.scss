@@ -1,0 +1,97 @@
+@use "../../styles/vars" as *;
+
+.favorites {
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 36.39px;
+    padding: 64px 0;
+  }
+  &__item {
+    display: grid;
+    grid-template-columns: 443px auto;
+    gap: 20px;
+    &:not(:last-child) {
+      padding-bottom: 24px;
+      border-bottom: 2px solid $gray-2;
+    }
+  }
+  &__img-container {
+    border-radius: 12px;
+    border: 0.77px solid $gray-2;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  &__car-title {
+    font-weight: 700;
+    font-size: $h2-title-size;
+    line-height: 117%;
+  }
+  &__description {
+    color: $gray-3;
+    margin: 16px 0;
+    max-width: 834px;
+  }
+  &__spec:not(:last-child) {
+    color: $gray-3;
+  }
+  &__spec:nth-child(2) {
+    margin: 16px 0 33.61px;
+  }
+  &__spec:last-child {
+    font-size: $h3-title-size;
+    line-height: 117%;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  &__actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  &__delete-button {
+    border: 2px solid $red---1;
+    border-radius: 5px;
+    padding: 17px;
+    transition: background-color .15s ease-in-out, border .15s ease-in-out;
+    &:hover {
+      background-color: $red---1;
+      & .favorites__delete-icon path {
+        fill: $gray-0---white;
+      }
+    }
+    &:active {
+      background-color: $red---2;
+      border-color: $red---2;
+      & .favorites__delete-icon path {
+        fill: $gray-0---white;
+      }
+    }
+  }
+  &__delete-icon {
+    width: 18px;
+    height: 19px;
+    & path {
+      transition: all .15s ease-in-out;
+    }
+  }
+}
+
+
+@media (max-width: $breakpoint-lg) {
+  .favorites {
+    &__items {
+      padding: 35px 0;
+    }
+    &__item {
+      grid-template-columns: 1fr;
+    }
+    &__img-container {
+      justify-content: center;
+    }
+    &__description {
+      font-size: 12px;
+    }
+  }
+}

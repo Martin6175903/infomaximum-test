@@ -1,0 +1,28 @@
+/* Fonts */
+/* Font-size */
+/* Colors */
+/* BreakPoints */
+.favorites {
+  margin: 46px 0;
+}
+.favorites__title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 121%;
+  padding-bottom: 26px;
+  border-bottom: 2px solid #d9d9d9;
+}
+
+@media (max-width: 1024px) {
+  .favorites__title {
+    font-size: 36px;
+  }
+}
+@media (max-width: 640px) {
+  .favorites__title {
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
+/*# sourceMappingURL=favorites.css.map */
