@@ -2,8 +2,9 @@ import Wrapper from "../../components/UI/wrapper/Wrapper";
 import { favoritesStore } from "../../store/store";
 import "./favorites.scss";
 import FavoritesItems from "../../components/favorites-items/FavoritesItems";
+import { observer } from 'mobx-react-lite';
 
-const Favorites = () => {
+const Favorites = observer(() => {
   return (
     <Wrapper>
       <main className="favorites">
@@ -14,6 +15,6 @@ const Favorites = () => {
       </main>
     </Wrapper>
   );
-};
+});
 
 export default Favorites;
