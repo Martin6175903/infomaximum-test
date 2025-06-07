@@ -2,7 +2,7 @@ import SortIcon from "@assets/icons/sort-icon.svg?react";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
 import "./sort-cars.scss";
 import { Car } from "../../../graphql/generated";
-import { sortCars } from "../../../utils/sortCars";
+import { useSortedCars } from '../../../hooks/utils/useSortedCars';
 
 interface SortCarsProps {
   cars: Car[];
@@ -24,9 +24,11 @@ const SortCars = ({ cars, setCars }: SortCarsProps) => {
   const [currentItemSelect, setCurrentItemSelect] = useState(sortItems[0]);
   const sortRef = useRef<HTMLDivElement>(null);
 
+  const sortedCars = useSortedCars(cars, currentItemSelect.value);
+
   useEffect(() => {
-    setCars(sortCars(cars, currentItemSelect.value));
-  }, [currentItemSelect]);
+    setCars(sortedCars);
+  }, [currentItemSelect.value]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

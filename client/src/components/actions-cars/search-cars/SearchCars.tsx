@@ -1,5 +1,5 @@
 import SearchIcon from "@assets/icons/search-icon.svg?react";
-import { Dispatch, SetStateAction, useState } from "react";
+import React, { Dispatch, SetStateAction, useCallback, useState } from 'react';
 import "./search-cars.scss";
 import { Car } from "../../../graphql/generated";
 
@@ -11,7 +11,7 @@ interface SearchCarsProps {
 const SearchCars = ({ setCars, data }: SearchCarsProps) => {
   const [valueInputSearch, setValueInputSearch] = useState<string>("");
 
-  const onHandleClickSearch = () => {
+  const onHandleClickSearch = useCallback(() => {
     setCars(
       data.filter((car: Car) => {
         const searchTerm = valueInputSearch.trim().toLowerCase();
@@ -21,6 +21,12 @@ const SearchCars = ({ setCars, data }: SearchCarsProps) => {
         return car.brand.toLowerCase().includes(valueInputSearch.toLowerCase());
       })
     );
+  }, [valueInputSearch, data]);
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      onHandleClickSearch();
+    }
   };
 
   return (
@@ -31,6 +37,7 @@ const SearchCars = ({ setCars, data }: SearchCarsProps) => {
         placeholder={"Найти авто"}
         value={valueInputSearch}
         onChange={(e) => setValueInputSearch(e.target.value)}
+        onKeyDown={handleKeyDown}
       />
       <button onClick={onHandleClickSearch} className="search__button button">
         <SearchIcon className={"button__icon"} />
