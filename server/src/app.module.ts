@@ -13,7 +13,6 @@ import { ConfigModule } from '@nestjs/config';
       playground: true,
       autoSchemaFile: true,
     }),
-
     CarsModule,
   ],
   controllers: [],
