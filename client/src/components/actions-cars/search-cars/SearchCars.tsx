@@ -1,5 +1,5 @@
 import SearchIcon from "@assets/icons/search-icon.svg?react";
-import React, { Dispatch, SetStateAction, useCallback, useState } from 'react';
+import React, { Dispatch, SetStateAction, useCallback, useState } from "react";
 import "./search-cars.scss";
 import { Car } from "../../../graphql/generated";
 
@@ -24,7 +24,7 @@ const SearchCars = ({ setCars, data }: SearchCarsProps) => {
   }, [valueInputSearch, data]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       onHandleClickSearch();
     }
   };

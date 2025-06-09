@@ -1,8 +1,8 @@
 import SortIcon from "@assets/icons/sort-icon.svg?react";
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import "./sort-cars.scss";
 import { Car } from "../../../graphql/generated";
-import { useSortedCars } from '../../../hooks/utils/useSortedCars';
+import { useSortedCars } from "../../../hooks/utils/useSortedCars";
 
 interface SortCarsProps {
   cars: Car[];

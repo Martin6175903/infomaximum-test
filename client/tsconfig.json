@@ -23,9 +23,7 @@
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"]
     },
-    "types": [
-      "vite-plugin-svgr/client"
-    ]
+    "types": ["vite-plugin-svgr/client"]
   },
   "include": [
     "src",

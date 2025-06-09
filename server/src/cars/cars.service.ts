@@ -4,19 +4,18 @@ import { Car } from './entities/car.entity';
 
 @Injectable()
 export class CarsService {
-  findAll(search?: string) {
-    if (search) {
-      return carsJSON.filter((car) =>
-        `${car.brand} ${car.model}`
-          .toLowerCase()
-          .includes(search.toLowerCase()),
-      );
-    }
+  findChunkCars(limit?: number, page?: number) {
+    const totalPages = Math.ceil(carsJSON.length / (limit ? limit : 1));
 
-    return carsJSON;
+    const cars =
+      limit && page
+        ? carsJSON.slice((page - 1) * limit, (page - 1) * limit + limit)
+        : carsJSON;
+
+    return { cars, totalPages };
   }
 
   findOne(id: number): Car | undefined {
-    return carsJSON.find((car) => car.id === id);
+    return carsJSON.find(car => car.id === id);
   }
 }

@@ -4,8 +4,8 @@ import Car from "../pages/Car/Car";
 import NotFound from "../pages/NotFound/NotFound";
 
 export const routes = [
-  { path: "/", element: <Cars /> },
+  { path: "/cars/:pageId", element: <Cars /> },
   { path: "/favorites", element: <Favorites /> },
-  { path: "/cars/:id", element: <Car /> },
+  { path: "/cars/car/:carId", element: <Car /> },
   { path: "*", element: <NotFound /> },
 ];

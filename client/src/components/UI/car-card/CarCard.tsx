@@ -37,6 +37,7 @@ const CarCard = observer(({ car }: CarCardProps) => {
       className={`car-card ${car.availability ? "" : "car-card--outstock"}`}
     >
       <Link
+        onClick={(e) => !car.availability && e.preventDefault()}
         to={`/${car.availability ? `cars/${car.id}` : ""}`}
         className="car-card__photo photo"
       >

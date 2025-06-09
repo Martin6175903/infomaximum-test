@@ -19,49 +19,86 @@ export type Scalars = {
 };
 
 export type Car = {
-  __typename?: "Car";
+  __typename?: 'Car';
   /** Наличие автомобиля */
-  availability: Scalars["Boolean"];
+  availability: Scalars['Boolean'];
   /** Марка автомобиля */
-  brand: Scalars["String"];
+  brand: Scalars['String'];
   /** Цвет автомобиля */
-  color: Scalars["String"];
+  color: Scalars['String'];
   /** Краткое описание автомобиля */
-  description: Scalars["String"];
+  description: Scalars['String'];
   /** Уникальный id автомобиля */
-  id: Scalars["Int"];
+  id: Scalars['Int'];
   /** Фото автомобиля */
-  img_src: Scalars["String"];
+  img_src: Scalars['String'];
   /** Модель автомобиля */
-  model: Scalars["String"];
+  model: Scalars['String'];
   /** Год выпуска модели автомобиля */
-  model_year: Scalars["Int"];
+  model_year: Scalars['Int'];
   /** Цена автомобиля */
-  price: Scalars["String"];
+  price: Scalars['String'];
+};
+
+/** Пагинированный список автомобилей с информацией о страницах */
+export type PaginatedCars = {
+  __typename?: 'PaginatedCars';
+  /** Массив автомобилей на текущей странице */
+  cars: Array<Car>;
+  /** Количество страниц автомобилей */
+  totalPages: Scalars['Int'];
 };
 
 export type Query = {
-  __typename?: "Query";
+  __typename?: 'Query';
   /** Получить автомобиль по id */
   car?: Maybe<Car>;
-  /** Получить все автомобили */
-  cars: Array<Car>;
+  /** Получить часть автомобилей */
+  chunk_cars: PaginatedCars;
 };
 
 export type QueryCarArgs = {
-  id: Scalars["Int"];
+  id: Scalars['Int'];
 };
 
-export type QueryCarsArgs = {
-  search?: InputMaybe<Scalars["String"]>;
+export type QueryChunk_CarsArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  page?: InputMaybe<Scalars['Int']>;
 };
 
-export type GetAllCarsQueryVariables = Exact<{ [key: string]: never }>;
+export type GetChunkCarsQueryVariables = Exact<{
+  limit?: InputMaybe<Scalars['Int']>;
+  page?: InputMaybe<Scalars['Int']>;
+}>;
 
-export type GetAllCarsQuery = {
-  __typename?: "Query";
-  cars: Array<{
-    __typename?: "Car";
+export type GetChunkCarsQuery = {
+  __typename?: 'Query';
+  chunk_cars: {
+    __typename?: 'PaginatedCars';
+    totalPages: number;
+    cars: Array<{
+      __typename?: 'Car';
+      id: number;
+      brand: string;
+      model: string;
+      availability: boolean;
+      color: string;
+      description: string;
+      img_src: string;
+      model_year: number;
+      price: string;
+    }>;
+  };
+};
+
+export type GetCarByIdQueryVariables = Exact<{
+  id: Scalars['Int'];
+}>;
+
+export type GetCarByIdQuery = {
+  __typename?: 'Query';
+  car?: {
+    __typename?: 'Car';
     id: number;
     brand: string;
     model: string;
@@ -71,5 +108,5 @@ export type GetAllCarsQuery = {
     img_src: string;
     model_year: number;
     price: string;
-  }>;
+  } | null;
 };

@@ -1,16 +1,18 @@
 import { Resolver, Query, Args, Int } from '@nestjs/graphql';
 import { CarsService } from './cars.service';
 import { Car } from './entities/car.entity';
+import { PaginatedCars } from './dto/paginated-cars.dto';
 
 @Resolver(() => Car)
 export class CarsResolver {
   constructor(private readonly carsService: CarsService) {}
 
-  @Query(() => [Car], { name: 'cars', description: 'Получить все автомобили' })
+  @Query(() => PaginatedCars, { name: 'chunk_cars', description: 'Получить часть автомобилей' })
   findAll(
-    @Args('search', { type: () => String, nullable: true }) search?: string,
+    @Args('limit', { type: () => Int, nullable: true }) limit?: number,
+    @Args('page', { type: () => Int, nullable: true }) page?: number,
   ) {
-    return this.carsService.findAll(search);
+    return this.carsService.findChunkCars(limit, page);
   }
 
   @Query(() => Car, {

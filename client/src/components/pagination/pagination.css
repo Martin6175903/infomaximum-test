@@ -1,0 +1,67 @@
+/* Fonts */
+/* Font-size */
+/* Colors */
+/* BreakPoints */
+.pagination {
+  margin-top: 56px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+.pagination__left, .pagination__right {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.pagination__left button, .pagination__right button {
+  width: 21px;
+  height: 21px;
+  transition: all 0.2s ease-in-out;
+  border-radius: 50%;
+}
+.pagination__left button:hover, .pagination__right button:hover {
+  transform: scale(1.3);
+}
+.pagination__pages {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.pagination__pages > * {
+  width: 40px;
+  height: 40px;
+}
+.pagination__page {
+  color: #d9d9d9;
+  transition: all 0.2s ease-in-out;
+  border-radius: 50%;
+}
+.pagination__page:hover {
+  color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(89, 89, 89, 0.2);
+}
+.pagination__page.pagination__page--active {
+  color: #000;
+  font-weight: 700;
+}
+.pagination-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 576px) {
+  .pagination {
+    gap: 4px;
+  }
+  .pagination__left, .pagination__right, .pagination__pages {
+    gap: 4px;
+  }
+  .pagination__page {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/*# sourceMappingURL=pagination.css.map */
