@@ -1,13 +1,13 @@
-import { favoritesStore } from "../../store/store";
-import Button from "../../components/UI/button/Button";
-import DeleteIcon from "@assets/icons/delete-icon.svg?react";
-import { observer } from "mobx-react-lite";
-import "./favorites-items.scss";
+import { favoritesStore } from '../../store/store';
+import Button from '../../components/UI/button/Button';
+import DeleteIcon from '@assets/icons/delete-icon.svg?react';
+import { observer } from 'mobx-react-lite';
+import './favorites-items.scss';
 
 const FavoritesItems = observer(() => {
   return (
     <div className="favorites__items">
-      {favoritesStore.favorites.map((favorite) => (
+      {favoritesStore.favorites.map(favorite => (
         <div className="favorites__item" key={favorite.id}>
           <div className="favorites__img-container">
             <img

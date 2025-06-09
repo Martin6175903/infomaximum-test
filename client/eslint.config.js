@@ -1,20 +1,20 @@
-import js from "@eslint/js";
-import globals from "globals";
-import tseslint from "typescript-eslint";
-import pluginReact from "eslint-plugin-react";
-import { defineConfig } from "eslint/config";
+import js from '@eslint/js';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
+import pluginReact from 'eslint-plugin-react';
+import { defineConfig } from 'eslint/config';
 
 export default defineConfig([
   {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+    files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     languageOptions: { globals: globals.browser },
     plugins: {
       js,
-      pluginReact,
+      pluginReact
     },
     extends: [tseslint.configs.recommended],
     rules: {
-      "@typescript-eslint/no-unused-vars": "warn",
-    },
-  },
+      '@typescript-eslint/no-unused-vars': 'warn'
+    }
+  }
 ]);

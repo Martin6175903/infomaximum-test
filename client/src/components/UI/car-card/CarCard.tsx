@@ -1,14 +1,14 @@
-import { Car } from "../../../graphql/generated";
-import "./car-card.scss";
-import Button from "../button/Button";
-import EmptyHeartIcon from "@assets/icons/empty-heart-icon.svg?react";
-import FilledHeartIcon from "@assets/icons/filled-heart-icon.svg?react";
-import { checkingOnStrLen } from "../../../utils/checkingOnStrLen";
-import { Link } from "react-router";
-import toast from "react-hot-toast";
-import { observer } from "mobx-react-lite";
-import { favoritesStore } from "../../../store/store";
-import { useState } from "react";
+import { Car } from '../../../graphql/generated';
+import './car-card.scss';
+import Button from '../button/Button';
+import EmptyHeartIcon from '@assets/icons/empty-heart-icon.svg?react';
+import FilledHeartIcon from '@assets/icons/filled-heart-icon.svg?react';
+import { checkingOnStrLen } from '../../../utils/checkingOnStrLen';
+import { Link } from 'react-router';
+import toast from 'react-hot-toast';
+import { observer } from 'mobx-react-lite';
+import { favoritesStore } from '../../../store/store';
+import { useState } from 'react';
 
 interface CarCardProps {
   car: Car;
@@ -16,12 +16,12 @@ interface CarCardProps {
 
 const CarCard = observer(({ car }: CarCardProps) => {
   const [isFavoriteCar, setIsFavoriteCar] = useState(
-    !!favoritesStore.favorites.find((item) => item.id === car.id)
+    !!favoritesStore.favorites.find(item => item.id === car.id)
   );
 
   function isStockCar(isStock: boolean) {
     if (!isStock) {
-      toast.error("Данного транспорта сейчас нет в коллекции.");
+      toast.error('Данного транспорта сейчас нет в коллекции.');
     }
   }
 
@@ -34,11 +34,11 @@ const CarCard = observer(({ car }: CarCardProps) => {
   return (
     <div
       onClick={() => isStockCar(car.availability)}
-      className={`car-card ${car.availability ? "" : "car-card--outstock"}`}
+      className={`car-card ${car.availability ? '' : 'car-card--outstock'}`}
     >
       <Link
-        onClick={(e) => !car.availability && e.preventDefault()}
-        to={`/${car.availability ? `cars/${car.id}` : ""}`}
+        onClick={e => !car.availability && e.preventDefault()}
+        to={`/${car.availability ? `cars/${car.id}` : ''}`}
         className="car-card__photo photo"
       >
         {!car.availability && <p className="photo__stock">Нет в наличии</p>}
@@ -46,7 +46,7 @@ const CarCard = observer(({ car }: CarCardProps) => {
           src={`${VITE_SERVER_URL}${car.img_src}`}
           alt={car.brand}
           className={`photo__img ${
-            car.availability ? "" : "photo__img--outstock"
+            car.availability ? '' : 'photo__img--outstock'
           }`}
         />
       </Link>
@@ -64,12 +64,12 @@ const CarCard = observer(({ car }: CarCardProps) => {
           <button
             onClick={onHandleClickFavorite}
             disabled={!car.availability}
-            className={"actions__button button"}
+            className={'actions__button button'}
           >
             {isFavoriteCar ? (
-              <FilledHeartIcon className={"button__icon"} />
+              <FilledHeartIcon className={'button__icon'} />
             ) : (
-              <EmptyHeartIcon className={"button__icon"} />
+              <EmptyHeartIcon className={'button__icon'} />
             )}
           </button>
         </div>

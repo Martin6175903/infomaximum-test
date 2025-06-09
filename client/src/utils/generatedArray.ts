@@ -8,6 +8,6 @@ export const generatedArray = (start: number, end: number) => {
         yield value;
       }
     }
-  }
-  return [...range]
-}
+  };
+  return [...range];
+};

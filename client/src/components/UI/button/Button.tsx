@@ -1,7 +1,7 @@
-import { ComponentProps, PropsWithChildren } from "react";
-import "./button.scss";
+import { ComponentProps, PropsWithChildren } from 'react';
+import './button.scss';
 
-interface ButtonProps extends ComponentProps<"button"> {
+interface ButtonProps extends ComponentProps<'button'> {
   width?: number;
   availability?: boolean;
 }
@@ -9,11 +9,11 @@ interface ButtonProps extends ComponentProps<"button"> {
 const Button = ({
   children,
   width,
-  availability = true,
+  availability = true
 }: PropsWithChildren<ButtonProps>) => {
   return (
     <button
-      className={`button-primary ${availability ? "" : "button--active"}`}
+      className={`button-primary ${availability ? '' : 'button--active'}`}
       style={{ width: width ? `${width}px` : `254px` }}
     >
       {children}

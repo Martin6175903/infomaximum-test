@@ -1,4 +1,3 @@
-import { Car } from '../../graphql/generated';
 import { useNavigate, useParams } from 'react-router';
 import { getPages } from '../../utils/getPages';
 import './pagination.scss';
@@ -8,14 +7,15 @@ import ArrowRightIcon from '@assets/icons/arrow-right-icon.svg?react';
 import DoubleArrowRightIcon from '@assets/icons/double-arrow-right-icon.svg?react';
 
 interface PaginationProps {
-  totalPages: number
+  totalPages: number;
 }
 
-const Pagination = ({totalPages}: PaginationProps) => {
-  const params = useParams<{ pageId: string }>()
+const Pagination = ({ totalPages }: PaginationProps) => {
+  const params = useParams<{ pageId: string }>();
   const navigate = useNavigate();
 
-  if (params.pageId && isNaN(+params.pageId)) throw new Error('pageId must be a number')
+  if (params.pageId && isNaN(+params.pageId))
+    throw new Error('pageId must be a number');
 
   return (
     <div className="pagination">
@@ -29,15 +29,17 @@ const Pagination = ({totalPages}: PaginationProps) => {
       </div>
       <div className="pagination__pages">
         {getPages(+params.pageId!, totalPages).map((page, index) =>
-          page === "..." ? (
+          page === '...' ? (
             <span key={index} className="pagination-dots">
-            ...
+              ...
             </span>
           ) : (
             <button
               key={index}
               onClick={() => navigate(`/cars/${page}`)}
-              className={`pagination__page  ${+params.pageId! === page ? "pagination__page--active" : ""}`}
+              className={`pagination__page  ${
+                +params.pageId! === page ? 'pagination__page--active' : ''
+              }`}
             >
               {page}
             </button>

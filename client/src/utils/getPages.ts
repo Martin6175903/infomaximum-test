@@ -7,11 +7,14 @@ export const getPages = (currentPage: number, totalPages: number) => {
 
   // Определяем диапазон вокруг текущей страницы
   const startPage = Math.max(2, currentPage - Math.floor(maxVisiblePages / 2));
-  const endPage = Math.min(totalPages - 1, currentPage + Math.floor(maxVisiblePages / 2));
+  const endPage = Math.min(
+    totalPages - 1,
+    currentPage + Math.floor(maxVisiblePages / 2)
+  );
 
   // Если разрыв между первой и началом диапазона > 1, добавляем "..."
   if (startPage > 2) {
-    pages.push("...");
+    pages.push('...');
   }
 
   // Добавляем страницы в диапазоне
@@ -21,7 +24,7 @@ export const getPages = (currentPage: number, totalPages: number) => {
 
   // Если разрыв между концом диапазона и последней страницей > 1, добавляем "..."
   if (endPage < totalPages - 1) {
-    pages.push("...");
+    pages.push('...');
   }
 
   // Всегда добавляем последнюю страницу (если она не совпадает с первой)
@@ -30,4 +33,4 @@ export const getPages = (currentPage: number, totalPages: number) => {
   }
 
   return pages;
-}
+};
