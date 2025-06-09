@@ -11,5 +11,3 @@ export const generatedArray = (start: number, end: number) => {
   }
   return [...range]
 }
-
-console.log(generatedArray(5,8));
